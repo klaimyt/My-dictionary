@@ -10,7 +10,7 @@
         <!--Words-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="quizlet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="quizlet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,8 +26,15 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Xig-LR-YhC" kind="show" identifier="ShowDetail" id="oJs-4w-hZb"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="n0N-7a-p6I"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="aXb-J9-N1b"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="arP-TH-bAc">
                                 <rect key="frame" x="0.0" y="627" width="375" height="40"/>
@@ -52,15 +59,18 @@
                     <navigationItem key="navigationItem" title="Words" id="e5E-0P-8df">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ohB-Ub-W9H"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="PkZ-2e-hxN" id="0S2-Nl-l1t"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="112.89355322338831"/>
         </scene>
-        <!--View Controller-->
+        <!--Word View Controller-->
         <scene sceneID="4WP-dy-8p0">
             <objects>
-                <viewController id="Xig-LR-YhC" sceneMemberID="viewController">
+                <viewController id="Xig-LR-YhC" customClass="WordViewController" customModule="quizlet" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rgM-CV-3lb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -98,6 +108,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HxK-Dh-Pj3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="vzO-j1-IU3"/>
+                    <connections>
+                        <outlet property="label" destination="sKd-c1-qsA" id="5xD-GF-1Te"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zyt-VK-ane" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
