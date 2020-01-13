@@ -15,8 +15,6 @@ class MainViewController: UIViewController {
     let finishWords = ["Terve", "Mita", "Moi", "Kylla", "Joo"]
     let russianWords = ["Привет", "Что", "Привет", "Да", "Да"]
     
-    //MARK: -Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let wordVC = segue.destination as? WordViewController else { return }
         if let indexPath = tableView.indexPathForSelectedRow {

@@ -13,15 +13,14 @@ class WordViewController: UIViewController {
     @IBOutlet weak var firstLanguageView: UIView!
     @IBOutlet weak var secondLanguageView: UIView!
     
-    
     @IBOutlet weak var firstLanguageLabel: UILabel!
     @IBOutlet weak var secondLanguageLabel: UILabel!
-    
     
     
     var firstLanguage = ""
     var secondLanguage = ""
     var isFlipped = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,7 @@ class WordViewController: UIViewController {
         secondLanguageView.isHidden = true
     }
     
+    //MARK: - IB Actions
     @IBAction func flipButtonPressed() {
         
         let fromView = isFlipped ? firstLanguageView : secondLanguageView
@@ -44,5 +44,7 @@ class WordViewController: UIViewController {
         firstLanguageView.isHidden = !firstLanguageView.isHidden
         isFlipped = !isFlipped
     }
+    
+    
     
 }
