@@ -21,8 +21,8 @@ class MainViewController: UIViewController {
         guard let wordVC = segue.destination as? WordViewController else { return }
         if let indexPath = tableView.indexPathForSelectedRow {
         
-            wordVC.finishWord = finishWords[indexPath.row]
-            wordVC.russianWord = russianWords[indexPath.row]
+            wordVC.firstLanguage = finishWords[indexPath.row]
+            wordVC.secondLanguage = russianWords[indexPath.row]
         }
     }
 }
