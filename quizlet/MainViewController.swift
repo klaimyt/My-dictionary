@@ -25,11 +25,19 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let wordVC = segue.destination as? WordViewController else { return }
         if let indexPath = tableView.indexPathForSelectedRow {
-        
+            
             wordVC.firstLanguage = words[indexPath.row].firstLanguageWord
             wordVC.secondLanguage = words[indexPath.row].secondLanguageWord
             wordVC.word = words
             wordVC.index = indexPath.row
+        }
+        
+        if segue.identifier == "ShowDetail" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+                let newWordVC = segue.destination as!  NewWordViewController
+                newWordVC.firstWordTextField.text = words[indexPath.row].firstLanguageWord
+                newWordVC.secondWordTextField.text = words[indexPath.row].secondLanguageWord
+            }
         }
     }
     
@@ -54,6 +62,12 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    //MARK: Table view delegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { _,_,_  in
@@ -66,4 +80,14 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return trailingSwipe
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let editingSwipe = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
+            self.performSegue(withIdentifier: "ShowDetail", sender: nil)
+        }
+        
+        let leadingSwipe = UISwipeActionsConfiguration(actions: [editingSwipe])
+        
+        return leadingSwipe
+    }
 }
