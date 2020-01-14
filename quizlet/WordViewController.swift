@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class WordViewController: UIViewController {
     
@@ -16,14 +17,22 @@ class WordViewController: UIViewController {
     @IBOutlet weak var firstLanguageLabel: UILabel!
     @IBOutlet weak var secondLanguageLabel: UILabel!
     
+    @IBOutlet weak var nextWordButton: UIButton!
     
     var firstLanguage = ""
     var secondLanguage = ""
+    var word: Results<Word>!
+    var index = 0
     var isFlipped = false
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        word = realm.objects(Word.self)
+        
         firstLanguageLabel.text = firstLanguage
         secondLanguageLabel.text = secondLanguage
         secondLanguageView.isHidden = true
@@ -43,6 +52,16 @@ class WordViewController: UIViewController {
         secondLanguageView.isHidden = !secondLanguageView.isHidden
         firstLanguageView.isHidden = !firstLanguageView.isHidden
         isFlipped = !isFlipped
+    }
+    
+    @IBAction func nextWordButtonPressed() {
+        firstLanguageLabel.text = word[index].firstLanguageWord
+        secondLanguageLabel.text = word[index].secondLanguageWord
+        if index == word.count - 1 {
+            index = 0
+        } else {
+            index += 1
+        }
     }
     
     

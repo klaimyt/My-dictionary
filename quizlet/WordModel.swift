@@ -8,6 +8,12 @@
  import RealmSwift
 
 class Word: Object {
-    @objc dynamic var firstLabguageWord = ""
+    @objc dynamic var firstLanguageWord = ""
     @objc dynamic var secondLanguageWord = ""
+    
+    convenience init(firstLanguageWord: String, secondLanguageWord: String) {
+        self.init()
+        self.firstLanguageWord = firstLanguageWord
+        self.secondLanguageWord = secondLanguageWord
+    }
 }
