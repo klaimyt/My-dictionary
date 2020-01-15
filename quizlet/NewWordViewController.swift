@@ -25,6 +25,7 @@ class NewWordViewController: UIViewController {
         secondWordTextField.addTarget(self, action: #selector(textFieldChanged),
                                       for: .editingChanged)
         setupEditingScreen()
+        setupToolBar()
     }
     
     //MARK: -IB Actions
@@ -63,11 +64,30 @@ class NewWordViewController: UIViewController {
             secondWordTextField.text = currentWord.secondLanguageWord
         }
     }
+    private func setupToolBar() {
+        let toolbar = UIToolbar(frame: CGRect(x: 0.0,
+                                              y: 0.0,
+                                              width: UIScreen.main.bounds.size.width,
+                                              height: 44.0))
+        let flexibleSize = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Done", style: .done,
+                                         target: self, action: #selector(doneButtonAction))
+        
+        toolbar.items = [flexibleSize ,doneButton]
+        
+        firstWordTextField.inputAccessoryView = toolbar
+        secondWordTextField.inputAccessoryView = toolbar
+    }
+    
+    @objc private func doneButtonAction() {
+        self.view.endEditing(true)
+    }
 }
 
 //MARK: -Text field delegate
 extension NewWordViewController: UITextFieldDelegate {
     
+
     @objc private func textFieldChanged() {
         
         if firstWordTextField.text?.isEmpty == false && secondWordTextField.text?.isEmpty == false {
@@ -78,3 +98,4 @@ extension NewWordViewController: UITextFieldDelegate {
         
     }
 }
+

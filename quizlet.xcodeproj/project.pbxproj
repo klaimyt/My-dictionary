@@ -24,7 +24,7 @@
 		0C4C6C4105DC0587D9E0E267 /* Pods_quizlet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_quizlet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B07358423CCC78D0097640A /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		5B07358823CCCE380097640A /* NewWordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWordViewController.swift; sourceTree = "<group>"; };
-		5B48ED6123CA733D00F54239 /* quizlet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quizlet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B48ED6123CA733D00F54239 /* My Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Dictionary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B48ED6423CA733D00F54239 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5B48ED6623CA733D00F54239 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		5B48ED6B23CA733D00F54239 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		5B48ED6223CA733D00F54239 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5B48ED6123CA733D00F54239 /* quizlet.app */,
+				5B48ED6123CA733D00F54239 /* My Dictionary.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,7 +122,7 @@
 			);
 			name = quizlet;
 			productName = quizlet;
-			productReference = 5B48ED6123CA733D00F54239 /* quizlet.app */;
+			productReference = 5B48ED6123CA733D00F54239 /* My Dictionary.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -372,12 +372,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TUAH322LU4;
 				INFOPLIST_FILE = quizlet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = klaimyt.quizlet;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = klaimyt.MyDictionary;
+				PRODUCT_NAME = "My Dictionary";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -391,12 +392,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TUAH322LU4;
 				INFOPLIST_FILE = quizlet/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = klaimyt.quizlet;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = klaimyt.MyDictionary;
+				PRODUCT_NAME = "My Dictionary";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

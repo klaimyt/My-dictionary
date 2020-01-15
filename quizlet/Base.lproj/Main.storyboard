@@ -10,7 +10,7 @@
         <!--Words-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="quizlet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="My_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
         <!--New Word View Controller-->
         <scene sceneID="fyY-qX-aRo">
             <objects>
-                <viewController id="3qh-qa-GXm" customClass="NewWordViewController" customModule="quizlet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3qh-qa-GXm" customClass="NewWordViewController" customModule="My_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="78N-Xu-TlR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,7 +119,7 @@
         <!--Word View Controller-->
         <scene sceneID="4WP-dy-8p0">
             <objects>
-                <viewController id="Xig-LR-YhC" customClass="WordViewController" customModule="quizlet" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xig-LR-YhC" customClass="WordViewController" customModule="My_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rgM-CV-3lb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -187,14 +187,16 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="itB-jr-qxM">
                                 <rect key="frame" x="62" y="572" width="250" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="next word"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
+                                <state key="normal" title="next word">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="nextWordButtonPressed" destination="Xig-LR-YhC" eventType="touchUpInside" id="D9d-Ih-yto"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.8454980022831049" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.97497620558375631" green="0.97497620558375631" blue="0.97497620558375631" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="NRv-KS-4T6" firstAttribute="centerY" secondItem="rgM-CV-3lb" secondAttribute="centerY" id="1xe-Uh-bR9"/>
                             <constraint firstItem="NRv-KS-4T6" firstAttribute="centerX" secondItem="rgM-CV-3lb" secondAttribute="centerX" id="5AL-2D-cQp"/>
