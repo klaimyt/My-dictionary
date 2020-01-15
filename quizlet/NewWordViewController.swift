@@ -27,6 +27,15 @@ class NewWordViewController: UIViewController {
         setupEditingScreen()
     }
     
+    //MARK: -IB Actions
+    @IBAction func saveButtonPressed() {
+        if firstWordTextField.text != nil || secondWordTextField.text != nil {
+            saveWord()
+            dismiss(animated: true)
+        }
+    }
+    
+    //MARK: - Funcs
     func saveWord() {
         
         guard let word = firstWordTextField.text,
@@ -46,13 +55,8 @@ class NewWordViewController: UIViewController {
         }
     }
     
-    @IBAction func saveButtonPressed() {
-        if firstWordTextField.text != nil || secondWordTextField.text != nil {
-            saveWord()
-            dismiss(animated: true)
-        }
-    }
     
+    //MARK: - Private func
     private func setupEditingScreen() {
         if currentWord != nil {
             firstWordTextField.text = currentWord.firstLanguageWord
@@ -61,6 +65,7 @@ class NewWordViewController: UIViewController {
     }
 }
 
+//MARK: -Text field delegate
 extension NewWordViewController: UITextFieldDelegate {
     
     @objc private func textFieldChanged() {

@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Xig-LR-YhC" kind="show" identifier="ShowDetail" id="oJs-4w-hZb"/>
+                                            <segue destination="Xig-LR-YhC" kind="show" identifier="wordVCSegue" id="oJs-4w-hZb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -49,13 +49,13 @@
                     <navigationItem key="navigationItem" title="Words" id="e5E-0P-8df">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ohB-Ub-W9H">
                             <connections>
-                                <segue destination="3qh-qa-GXm" kind="show" id="dmw-Or-53p"/>
+                                <segue destination="3qh-qa-GXm" kind="show" identifier="" id="dmw-Or-53p"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="PkZ-2e-hxN" id="0S2-Nl-l1t"/>
-                        <segue destination="3qh-qa-GXm" kind="show" identifier="ShowDetail" id="lwf-Uo-ORo"/>
+                        <segue destination="3qh-qa-GXm" kind="show" identifier="showDetail" id="lwf-Uo-ORo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -74,11 +74,17 @@
                                 <rect key="frame" x="16" y="84" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="next"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3qh-qa-GXm" id="H3S-Ng-z6J"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Перевод" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rms-qf-WrT">
                                 <rect key="frame" x="16" y="158" width="343" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3qh-qa-GXm" id="n1S-21-fK8"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -234,6 +240,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lwf-Uo-ORo"/>
+        <segue reference="dmw-Or-53p"/>
     </inferredMetricsTieBreakers>
 </document>

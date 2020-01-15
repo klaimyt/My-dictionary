@@ -18,14 +18,11 @@ class WordViewController: UIViewController {
     @IBOutlet weak var secondLanguageLabel: UILabel!
     
     @IBOutlet weak var nextWordButton: UIButton!
-    
-    var firstLanguage = ""
-    var secondLanguage = ""
+
     var word: Results<Word>!
     var index = 0
-    var isFlipped = false
     
-    
+    private var isFlipped = false
     
     
     override func viewDidLoad() {
@@ -33,8 +30,8 @@ class WordViewController: UIViewController {
         
         word = realm.objects(Word.self)
         
-        firstLanguageLabel.text = firstLanguage
-        secondLanguageLabel.text = secondLanguage
+        firstLanguageLabel.text = word[index].firstLanguageWord
+        secondLanguageLabel.text = word[index].secondLanguageWord
         secondLanguageView.isHidden = true
     }
     
@@ -63,7 +60,4 @@ class WordViewController: UIViewController {
             index += 1
         }
     }
-    
-    
-    
 }

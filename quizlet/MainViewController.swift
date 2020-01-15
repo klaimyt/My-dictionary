@@ -14,6 +14,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     private var words: Results<Word>!
+    private var rowIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,22 +23,17 @@ class MainViewController: UIViewController {
               
     }
     
+    //MARK: -Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "wordVCSegue" {
         guard let wordVC = segue.destination as? WordViewController else { return }
         if let indexPath = tableView.indexPathForSelectedRow {
-            
-            wordVC.firstLanguage = words[indexPath.row].firstLanguageWord
-            wordVC.secondLanguage = words[indexPath.row].secondLanguageWord
             wordVC.word = words
             wordVC.index = indexPath.row
-        }
-        
-        if segue.identifier == "ShowDetail" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let newWordVC = segue.destination as!  NewWordViewController
-                newWordVC.firstWordTextField.text = words[indexPath.row].firstLanguageWord
-                newWordVC.secondWordTextField.text = words[indexPath.row].secondLanguageWord
             }
+        } else if segue.identifier == "showDetail" {
+                guard let newWordVC = segue.destination as?  NewWordViewController else { return }
+                newWordVC.currentWord = words[rowIndex]
         }
     }
     
@@ -49,6 +45,7 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: -Table View Data source
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         words.count
@@ -62,7 +59,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    //MARK: Table view delegate
+    //MARK: -Table view delegate
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -83,7 +80,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let editingSwipe = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
-            self.performSegue(withIdentifier: "ShowDetail", sender: nil)
+            self.rowIndex = indexPath.row
+            self.performSegue(withIdentifier: "showDetail", sender: nil)
         }
         
         let leadingSwipe = UISwipeActionsConfiguration(actions: [editingSwipe])
