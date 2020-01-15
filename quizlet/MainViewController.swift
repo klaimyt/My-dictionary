@@ -79,10 +79,13 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let editingSwipe = UIContextualAction(style: .normal, title: "Edit") { (_, _, _) in
+        let editingSwipe = UIContextualAction(style: .normal, title: "Edit") { (_, _, handler) in
             self.rowIndex = indexPath.row
             self.performSegue(withIdentifier: "showDetail", sender: nil)
+            handler(true)
         }
+        
+        editingSwipe.backgroundColor = .brown
         
         let leadingSwipe = UISwipeActionsConfiguration(actions: [editingSwipe])
         
