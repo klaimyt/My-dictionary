@@ -28,6 +28,10 @@ class NewWordViewController: UIViewController {
         setupToolBar()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     //MARK: -IB Actions
     @IBAction func saveButtonPressed() {
         if firstWordTextField.text != nil || secondWordTextField.text != nil {
@@ -87,9 +91,28 @@ class NewWordViewController: UIViewController {
 //MARK: -Text field delegate
 extension NewWordViewController: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == firstWordTextField {
+            firstWordTextField.resignFirstResponder()
+            secondWordTextField.becomeFirstResponder()
+        } else {
+            secondWordTextField.resignFirstResponder()
+        }
+        
+        //TODO: Close and save from keyboard done button
+//            guard let firstWord = firstWordTextField.text,
+//                let secondWord = secondWordTextField.text
+//                else { return false }
+//            if firstWord != "" && secondWord != "" {
+//                saveButtonPressed()
+//                dismiss(animated: true)
+//            }
+        
+        return true
+    }
+    
 
     @objc private func textFieldChanged() {
-        
         if firstWordTextField.text?.isEmpty == false && secondWordTextField.text?.isEmpty == false {
             saveButton.isEnabled = true
         } else {

@@ -24,7 +24,6 @@ class WordViewController: UIViewController {
     
     private var isFlipped = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,7 +39,7 @@ class WordViewController: UIViewController {
         
         let fromView = isFlipped ? firstLanguageView : secondLanguageView
         let toView = isFlipped ? secondLanguageView : firstLanguageView
-        
+ 
         UIView.transition(from: fromView!,
                           to: toView!,
                           duration: 0.3,
@@ -52,12 +51,15 @@ class WordViewController: UIViewController {
     }
     
     @IBAction func nextWordButtonPressed() {
-        firstLanguageLabel.text = word[index].firstLanguageWord
-        secondLanguageLabel.text = word[index].secondLanguageWord
+        firstLanguageView.isHidden = false
+        secondLanguageView.isHidden = true
         if index == word.count - 1 {
             index = 0
         } else {
             index += 1
         }
+        isFlipped = false
+        firstLanguageLabel.text = word[index].firstLanguageWord
+        secondLanguageLabel.text = word[index].secondLanguageWord
     }
 }
