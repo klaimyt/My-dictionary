@@ -59,6 +59,52 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5B45671923CF9F7C00918FD9 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5BEB154723CA81B3000B0080 /* MainViewController.swift */,
+				5B48ED7823CA7F0600F54239 /* WordViewController.swift */,
+				5B07358823CCCE380097640A /* NewWordViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		5B45671A23CF9FA000918FD9 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5B48ED6A23CA733D00F54239 /* Main.storyboard */,
+				5B48ED6F23CA734000F54239 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5B45671B23CF9FCE00918FD9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5B07358423CCC78D0097640A /* StorageManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		5B45671C23CF9FE300918FD9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B4D103723CCC4550086EE37 /* WordModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B45671D23CF9FF900918FD9 /* Supprot Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B48ED6423CA733D00F54239 /* AppDelegate.swift */,
+				5B48ED6623CA733D00F54239 /* SceneDelegate.swift */,
+				5B48ED6D23CA734000F54239 /* Assets.xcassets */,
+				5B48ED7223CA734000F54239 /* Info.plist */,
+			);
+			path = "Supprot Files";
+			sourceTree = "<group>";
+		};
 		5B48ED5823CA733D00F54239 = {
 			isa = PBXGroup;
 			children = (
@@ -80,17 +126,11 @@
 		5B48ED6323CA733D00F54239 /* quizlet */ = {
 			isa = PBXGroup;
 			children = (
-				5B48ED6423CA733D00F54239 /* AppDelegate.swift */,
-				5B48ED6623CA733D00F54239 /* SceneDelegate.swift */,
-				5BEB154723CA81B3000B0080 /* MainViewController.swift */,
-				5B4D103723CCC4550086EE37 /* WordModel.swift */,
-				5B07358423CCC78D0097640A /* StorageManager.swift */,
-				5B48ED7823CA7F0600F54239 /* WordViewController.swift */,
-				5B48ED6A23CA733D00F54239 /* Main.storyboard */,
-				5B07358823CCCE380097640A /* NewWordViewController.swift */,
-				5B48ED6D23CA734000F54239 /* Assets.xcassets */,
-				5B48ED6F23CA734000F54239 /* LaunchScreen.storyboard */,
-				5B48ED7223CA734000F54239 /* Info.plist */,
+				5B45671D23CF9FF900918FD9 /* Supprot Files */,
+				5B45671C23CF9FE300918FD9 /* Models */,
+				5B45671B23CF9FCE00918FD9 /* Helpers */,
+				5B45671923CF9F7C00918FD9 /* View Controllers */,
+				5B45671A23CF9FA000918FD9 /* Storyboards */,
 			);
 			path = quizlet;
 			sourceTree = "<group>";
@@ -369,9 +409,10 @@
 			baseConfigurationReference = 7855593AF8DE0592D181C059 /* Pods-quizlet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TUAH322LU4;
-				INFOPLIST_FILE = quizlet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/quizlet/Supprot Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,6 +420,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = klaimyt.MyDictionary;
 				PRODUCT_NAME = "My Dictionary";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -389,9 +431,10 @@
 			baseConfigurationReference = C24F26E605404B94E4C96DB9 /* Pods-quizlet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TUAH322LU4;
-				INFOPLIST_FILE = quizlet/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/quizlet/Supprot Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -399,6 +442,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = klaimyt.MyDictionary;
 				PRODUCT_NAME = "My Dictionary";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
