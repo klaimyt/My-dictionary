@@ -18,9 +18,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-              words = realm.objects(Word.self)
-              
+        tableView.backgroundColor = .white
+        words = realm.objects(Word.self)
+        navigationBarSettings()
     }
     
     //MARK: -Navigation
@@ -43,6 +43,17 @@ class MainViewController: UIViewController {
         newWordVC.saveWord()
         tableView.reloadData()
     }
+    
+    //MARK: - Private func
+    private func navigationBarSettings() {
+        let navigationBar = self.navigationController?.navigationBar
+        navigationBar?.barTintColor = UIColor(red: 81/255,
+                                              green: 81/255,
+                                              blue: 81/255,
+                                              alpha: 1)
+        
+        navigationBar?.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    }
 }
 
 //MARK: -Table View Data source
@@ -54,6 +65,8 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
+        cell.backgroundColor = .white
+        cell.textLabel?.textColor = .black
         cell.textLabel?.text = words[indexPath.row].firstLanguageWord
         
         return cell
@@ -91,4 +104,5 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         
         return leadingSwipe
     }
+    
 }
